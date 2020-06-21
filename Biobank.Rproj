@@ -1,0 +1,11 @@
+library(tidyverse)
+library(ggplot2)
+asi <- read.csv("//ad.ucl.ac.uk/homex/rmheoxx/Documents/Biobank/ASIforR.csv")
+View(asi)
+asi <- asi %>% 
+  select (-(X:X.39))
+asi <- asi %>% 
+  select (-(X.40:X.59))
+
+asi %>% group_by (gi_cancer_type) %>% 
+  summarise
